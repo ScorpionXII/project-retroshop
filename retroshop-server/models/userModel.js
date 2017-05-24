@@ -1,0 +1,1 @@
+const mongoose = require('mongoose');const Schema   = mongoose.Schema;const UserSchema = new Schema({	'username' : String,	'password' : String,	'fullname' : String,	'picture' : String,	'pictureName' : String,	'location' : { lat: Number, lon: Number }});UserSchema.setupTimestamp(true);module.exports = mongoose.model('User', UserSchema);
