@@ -1,13 +1,32 @@
-<h1> Authentication Sample </h1>
-<form>
-  <h2> Login or Signup </h2>
-  <label> Username </label>
-  <input type="text" [(ngModel)]="formInfo.username" name="username"/>
-  <br>
-  <label> Password </label>
-  <input type="password" [(ngModel)]="formInfo.password" name="password"/>
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          RetroShop Login
+        </h3>
+      </div>
+      <div class="panel-body">
+        <form role="form">
 
-  <button (click)="login()"> login </button>
-  <button (click)="signup()"> signup </button>
-</form>
-<p class="error"> {{ error }} </p>
+          <div class="form-group">
+            <label for="username">Email address</label>
+            <input type="email" class="form-control" id="username" name="username" placeholder="Enter email" [(ngModel)]="formInfo.username"/>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" [(ngModel)]="formInfo.password"/>
+          </div>
+
+          <button (click)="login()" class="btn btn-primary">
+            Login
+          </button>
+
+          <button routerLink="signup" class="btn btn-success">
+            Signup!
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
