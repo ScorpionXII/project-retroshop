@@ -45,7 +45,10 @@
         </form>
         <ul class="nav navbar-nav navbar-right">
           <li *ngIf="!user">
-            <a routerLink="">Login <i class="glyphicon glyphicon-log-in"></i></a>
+            <a routerLink="/login">Login <i class="glyphicon glyphicon-log-in"></i></a>
+          </li>
+          <li *ngIf="user">
+            <a href="#" (click)="logout()">Logout <i class="glyphicon glyphicon-log-in"></i></a>
           </li>
         </ul>
       </div>

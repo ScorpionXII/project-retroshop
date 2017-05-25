@@ -14,7 +14,6 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
-  user: any;
   error: string;
 
   constructor(private session: SessionService, private route: ActivatedRoute, private router: Router) { }
@@ -24,8 +23,9 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.session.login(this.formInfo)
-      .subscribe(
-        (user) => this.user = user,
+      .subscribe((user) => {
+          this.router.navigate(['home']);
+        },
         (err) => this.error = err
       );
   }
