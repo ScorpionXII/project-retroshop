@@ -5,18 +5,20 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { SessionService } from '../services/session.service';
-import { SignupFormComponent } from '../components/signup-form/signup-form.component';
-import { NavBarComponent } from '../components/nav-bar/nav-bar.component';
-import { LoginFormComponent } from '../components/login-form/login-form.component';
 import { RouterModule } from "@angular/router";
 import { routes } from './app.routing';
+import { SignupComponent } from '../components/signup/signup.component';
+import { NavBarComponent } from '../components/nav-bar/nav-bar.component';
+import { LoginComponent } from '../components/login/login.component';
+import { ProductComponent } from '../components/product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupFormComponent,
+    SignupComponent,
     NavBarComponent,
-    LoginFormComponent
+    LoginComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
