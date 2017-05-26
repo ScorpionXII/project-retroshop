@@ -25,8 +25,8 @@ router.post('/signup', upload.single('picture'), (req, res, next) => {
 
         const newUser = new UserModel({
             username: username,
-            password: hashPass
-            // fullname: fullname,
+            password: hashPass,
+            fullname: fullname
             // picture: `/uploads/images/${ req.file.filename }`,
             // pictureName: `${ req.file.originalname }`,
             // location: location

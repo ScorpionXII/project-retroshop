@@ -50,7 +50,8 @@ const productRoutes = require('./routes/productRoutes');
 
 app.use('/', index);
 app.use('/', authRoutes);
-app.use('/user', userRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/products', productRoutes);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

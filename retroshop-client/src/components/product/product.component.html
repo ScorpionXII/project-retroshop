@@ -25,29 +25,33 @@
           </div>
 
           <div class="form-group">
-            <label for="fullname">Full name</label>
-            <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter name"/>
+            <div>
+              <label>Category</label>
+            </div>
+            <label class="radio-inline"><input type="radio" name="category" value="Console">Console</label>
+            <label class="radio-inline"><input type="radio" name="category" value="Accesory">Accesory</label>
+            <label class="radio-inline"><input type="radio" name="category" value="Game">Game</label>
           </div>
 
           <div class="form-group">
-            <label for="location">Location</label>
-            <input type="text" class="form-control" id="location" name="fullname" placeholder="Pick your location"/>
+            <label for="price">Price</label>
+            <input type="number" class="form-control" id="price" name="price" placeholder="Price"/>
           </div>
 
           <div class="form-group">
             <label for="picture">Profile picture</label>
             <div class="input-group">
                     <span class="btn btn-primary btn-file input-group-addon">
-                        Browse… <input type="file" id="picture" name="picture" multiple="">
+                        Browse… <input (change)="onChange()" type="file" id="picture" name="picture" multiple="">
                     </span>
-              <input type="text" class="form-control" readonly="" placeholder="">
+              <input type="text" class="form-control" name="filename" placeholder="" [(ngModel)]="filename" readonly>
             </div>
             <br>
             <p class="help-block">
               Example block-level help text here.
             </p>
           </div>
-          <button (click)="signup()" class="btn btn-primary">Register</button>
+          <button class="btn btn-primary">Sell item</button>
         </form>
       </div>
     </div>

@@ -1,7 +1,9 @@
 import {EventEmitter, Injectable, Output} from '@angular/core';
 import {Http, Response} from '@angular/http';
 import {Observable} from "rxjs/Observable";
+import { environment } from '../../environments/environment';
 import 'rxjs/Rx';
+
 
 
 @Injectable()
@@ -9,24 +11,20 @@ export class SessionService {
 
   userChanged = new EventEmitter<any>();
 
-  private API_URL = "http://localhost:3000";
+  private serverUrl = environment.serverUrl;
   private localUser: Object;
 
   constructor(private http: Http) {
   }
 
-  handleError(e) {
-    return Observable.throw(e.json().message);
-  }
-
   signup(user) {
-    return this.http.post(`${this.API_URL}/signup`, user)
+    return this.http.post(`${this.serverUrl}/signup`, user)
       .map(res => res.json())
       .catch(this.handleError);
   }
 
   login(user) {
-    return this.http.post(`${this.API_URL}/login`, user)
+    return this.http.post(`${this.serverUrl}/login`, user)
       .map(res => {
 
         this.localUser = res.json();
@@ -38,7 +36,7 @@ export class SessionService {
   }
 
   logout() {
-    return this.http.post(`${this.API_URL}/logout`, {})
+    return this.http.post(`${this.serverUrl}/logout`, {})
       .map(res => {
 
         this.localUser = null;
@@ -50,15 +48,19 @@ export class SessionService {
   }
 
   isLoggedIn() {
-    return this.http.get(`${this.API_URL}/loggedin`)
+    return this.http.get(`${this.serverUrl}/loggedin`)
       .map(res => res.json())
       .catch(this.handleError);
   }
 
   getPrivateData() {
-    return this.http.get(`${this.API_URL}/private`)
+    return this.http.get(`${this.serverUrl}/private`)
       .map(res => res.json())
       .catch(this.handleError);
+  }
+
+  handleError(e) {
+    return Observable.throw(e.json().message);
   }
 
   getUserChangedEmitter() {
