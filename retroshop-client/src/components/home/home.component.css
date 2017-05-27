@@ -1,0 +1,21 @@
+.masonry {
+  margin: auto;
+}
+
+.masonry-brick {
+  width: 250px;
+  margin: 0 10px 0;
+}
+
+.masonry-brick img {
+  width: 240px;
+  height: 150px;
+}
+
+/*.thumbnail p {*/
+  /*height: 90px;*/
+/*}*/
+
+/*.thumbnail-custom {*/
+  /*height: 350px;*/
+/*}*/

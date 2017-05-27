@@ -15,7 +15,10 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit() {
     this.session.getUserChangedEmitter()
-      .subscribe(user => this.user = user);
+      .subscribe(user => {
+        this.user = user;
+        this.session.isLoggedIn().subscribe(user => console.log(user));
+      });
   }
 
   logout() {

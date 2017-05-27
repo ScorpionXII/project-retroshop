@@ -1,10 +1,8 @@
 import {EventEmitter, Injectable, Output} from '@angular/core';
-import {Http, Response} from '@angular/http';
+import {Http, RequestOptions, Headers, Response} from '@angular/http';
 import {Observable} from "rxjs/Observable";
 import { environment } from '../../environments/environment';
 import 'rxjs/Rx';
-
-
 
 @Injectable()
 export class SessionService {
@@ -24,9 +22,8 @@ export class SessionService {
   }
 
   login(user) {
-    return this.http.post(`${this.serverUrl}/login`, user)
+    return this.http.post(`${this.serverUrl}/login`, user, { withCredentials: true })
       .map(res => {
-
         this.localUser = res.json();
         this.userChanged.emit(this.localUser);
 

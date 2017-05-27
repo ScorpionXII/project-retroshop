@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const UserController = require('../controllers/userController.js');
+const authChecker = require('../middlewares/authCheckerMiddleware');
+const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
 
 /*
  * GET

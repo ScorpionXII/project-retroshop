@@ -8,11 +8,16 @@ const mongoose     = require('mongoose');
 const passport     = require('passport');
 const session      = require('express-session');
 const MongoStore   = require('connect-mongo')(session);
+const cors         = require('cors');
 
 mongoose.connect('mongodb://localhost/retroshop-db');
 
 const app = express();
-app.use(require('cors')());
+
+const corsOptions = {
+    origin: true,
+    credentials: true
+}
 
 // passport.js configuration
 require('./config/passportConfig')(passport);
@@ -42,6 +47,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(cors(corsOptions));
+
+app.options('*', cors(corsOptions)) // include before other routes
 
 const index = require('./routes/index');
 const authRoutes = require('./routes/authRoutes');

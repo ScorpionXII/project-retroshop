@@ -5,9 +5,9 @@ import {ProductComponent} from "../components/product/product.component";
 import {HomeComponent} from "../components/home/home.component";
 
 export const routes: Routes = [
-  // { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: '', component: ProductComponent },
+  { path: 'p', component: ProductComponent },
   { path: '**', redirectTo: '' }
 ];

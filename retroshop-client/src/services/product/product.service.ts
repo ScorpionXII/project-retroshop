@@ -5,9 +5,9 @@ import { environment } from '../../environments/environment';
 import {Observable} from "rxjs/Observable";
 
 @Injectable()
-export class ProducService {
+export class ProductService {
 
-  serverUrl = environment.serverUrl;
+  private serverUrl = environment.serverUrl;
 
   constructor(private http: Http) {}
 

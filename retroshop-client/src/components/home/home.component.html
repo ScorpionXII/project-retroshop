@@ -1,3 +1,14 @@
-<p>
-  home works!
-</p>
+<div class="row">
+  <masonry class="masonry" [options]="{ fitWidth: true, horizontalOrder: true, initLayout: true }">
+    <masonry-brick class="masonry-brick" *ngFor="let product of productsList">
+        <div class="thumbnail thumbnail-custom">
+          <img src="https://placehold.it/240x150" alt="...">
+          <div class="caption">
+            <h4>{{ product.title }}</h4>
+            <p>{{ product.description }}</p>
+            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+          </div>
+        </div>
+    </masonry-brick>
+  </masonry>
+</div>

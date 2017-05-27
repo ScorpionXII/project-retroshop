@@ -49,6 +49,7 @@ router.post('/signup', upload.single('picture'), (req, res, next) => {
 });
 
 router.post('/login', (req, res, next) => {
+    console.log(req.headers);
     passport.authenticate('local', (err, user, failure) => {
         if (err) {
             return res.status(500).json({ message: 'Something went wrong' });
@@ -75,6 +76,7 @@ router.post('/logout', (req, res, next) => {
 });
 
 router.get('/loggedin', (req, res, next) => {
+    console.log(req.isAuthenticated());
     if (req.isAuthenticated()) {
         return res.status(200).json(req.user);
     }
