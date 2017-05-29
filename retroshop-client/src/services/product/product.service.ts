@@ -12,16 +12,22 @@ export class ProductService {
   constructor(private http: Http) {}
 
   getList() {
-    return this.http.get(`${this.serverUrl}/api/products`)
+    return this.http.get(`${this.serverUrl}/api/products`, { withCredentials: true })
       .map((res) => res.json())
       .catch(this.handleError);
   }
 
   get(id) {
-    return this.http.get(`${this.serverUrl}/api/products/${id}`)
+    return this.http.get(`${this.serverUrl}/api/products/${id}`, { withCredentials:true })
       .map((res) => res.json())
       .catch(this.handleError);
 
+  }
+
+  create(product) {
+    return this.http.post(`${this.serverUrl}/api/products`, product, { withCredentials:true })
+      .map((res) => res.json())
+      .catch(this.handleError);
   }
 
   edit(phone) {

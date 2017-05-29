@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
     <div class="panel panel-primary">
       <div class="panel-heading">
         <h3 class="panel-title">
@@ -28,14 +28,14 @@
             <div>
               <label>Category</label>
             </div>
-            <label class="radio-inline"><input type="radio" name="category" value="Console">Console</label>
-            <label class="radio-inline"><input type="radio" name="category" value="Accesory">Accesory</label>
-            <label class="radio-inline"><input type="radio" name="category" value="Game">Game</label>
+            <label class="radio-inline"><input type="radio" name="category" (click)="formInfo.category = 'console'"/>Console</label>
+            <label class="radio-inline"><input type="radio" name="category" (click)="formInfo.category = 'accessory'"/>Accesory</label>
+            <label class="radio-inline"><input type="radio" name="category" (click)="formInfo.category = 'game'"/>Game</label>
           </div>
 
           <div class="form-group">
             <label for="price">Price</label>
-            <input type="number" class="form-control" id="price" name="price" placeholder="Price"/>
+            <input type="number" class="form-control" id="price" name="price" placeholder="Price" [(ngModel)]="formInfo.price"/>
           </div>
 
           <div class="form-group">
@@ -51,7 +51,7 @@
               Example block-level help text here.
             </p>
           </div>
-          <button class="btn btn-primary">Sell item</button>
+          <button (click)="submit()" class="btn btn-primary">Sell item</button>
         </form>
       </div>
     </div>

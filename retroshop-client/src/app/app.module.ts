@@ -11,9 +11,11 @@ import { routes } from './app.routing';
 import { SignupComponent } from '../components/signup/signup.component';
 import { NavBarComponent } from '../components/nav-bar/nav-bar.component';
 import { LoginComponent } from '../components/login/login.component';
-import { ProductComponent } from '../components/product/product.component';
+import { ProductCreateComponent } from '../components/product-create/product-create.component';
 import { HomeComponent } from '../components/home/home.component';
-import {ProductService} from "../services/product/product.service";
+import { ProductService } from "../services/product/product.service";
+import { FileSelectDirective } from "ng2-file-upload";
+import { ProductListComponent } from '../components/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,10 @@ import {ProductService} from "../services/product/product.service";
     SignupComponent,
     NavBarComponent,
     LoginComponent,
-    ProductComponent,
-    HomeComponent
+    ProductCreateComponent,
+    HomeComponent,
+    FileSelectDirective,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,

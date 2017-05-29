@@ -8,7 +8,7 @@ const UserModel = require('../models/userModel');
 const multer  = require('multer');
 const upload = multer({ dest: './public/uploads/images' });
 
-router.post('/signup', upload.single('picture'), (req, res, next) => {
+router.post('/signup', upload.single('file'), (req, res, next) => {
     const { username, password, fullname, location } = req.body;
 
     if (!username || !password) {
@@ -26,9 +26,9 @@ router.post('/signup', upload.single('picture'), (req, res, next) => {
         const newUser = new UserModel({
             username: username,
             password: hashPass,
-            fullname: fullname
-            // picture: `/uploads/images/${ req.file.filename }`,
-            // pictureName: `${ req.file.originalname }`,
+            fullname: fullname,
+            picture: `/uploads/images/${ req.file.filename }`,
+            pictureName: `${ req.file.originalname }`
             // location: location
         });
 

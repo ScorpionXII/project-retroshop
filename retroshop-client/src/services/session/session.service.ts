@@ -10,7 +10,7 @@ export class SessionService {
   userChanged = new EventEmitter<any>();
 
   private serverUrl = environment.serverUrl;
-  private localUser: Object;
+  private loggedUser = null;
 
   constructor(private http: Http) {
   }
@@ -24,8 +24,8 @@ export class SessionService {
   login(user) {
     return this.http.post(`${this.serverUrl}/login`, user, { withCredentials: true })
       .map(res => {
-        this.localUser = res.json();
-        this.userChanged.emit(this.localUser);
+        this.loggedUser = res.json();
+        this.userChanged.emit(this.loggedUser);
 
         return res.json()
       })
@@ -33,11 +33,11 @@ export class SessionService {
   }
 
   logout() {
-    return this.http.post(`${this.serverUrl}/logout`, {})
+    return this.http.post(`${this.serverUrl}/logout`, {}, { withCredentials: true })
       .map(res => {
 
-        this.localUser = null;
-        this.userChanged.emit(this.localUser);
+        this.loggedUser = null;
+        this.userChanged.emit(this.loggedUser);
 
         return res.json();
       })
@@ -45,8 +45,14 @@ export class SessionService {
   }
 
   isLoggedIn() {
-    return this.http.get(`${this.serverUrl}/loggedin`)
-      .map(res => res.json())
+    return this.http.get(`${this.serverUrl}/loggedin`, { withCredentials: true })
+      .map(res => {
+        if (this.loggedUser == null) {
+          this.loggedUser = res.json();
+          this.userChanged.emit(this.loggedUser);
+        }
+        return res.json();
+      })
       .catch(this.handleError);
   }
 

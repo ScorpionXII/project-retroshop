@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   error: string;
 
-  constructor(private session: SessionService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private session: SessionService, private router: Router) { }
 
   ngOnInit() {
   }

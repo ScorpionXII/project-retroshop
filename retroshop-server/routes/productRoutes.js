@@ -16,16 +16,16 @@ router.get('/:id', ProductController.show);
 /*
  * POST
  */
-router.post('/', ProductController.create);
+router.post('/', authChecker, ProductController.create);
 
 /*
  * PUT
  */
-router.put('/:id', ProductController.update);
+router.put('/:id', authChecker, ProductController.update);
 
 /*
  * DELETE
  */
-router.delete('/:id', ProductController.remove);
+router.delete('/:id', authChecker, ProductController.remove);
 
 module.exports = router;

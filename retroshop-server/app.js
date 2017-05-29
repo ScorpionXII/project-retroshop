@@ -14,21 +14,26 @@ mongoose.connect('mongodb://localhost/retroshop-db');
 
 const app = express();
 
-const corsOptions = {
-    origin: true,
-    credentials: true
-}
-
 // passport.js configuration
 require('./config/passportConfig')(passport);
 
 // session configuration
 app.use(session({
     secret: 'retroshop-key',
-    resave: false,
-    saveUninitialized: true,
-    store: new MongoStore({ mongooseConnection: mongoose.connection })
+    resave: true,
+    saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection})
 }));
+
+// configuring CORS > EXTREMELY IMPORTANT FOR SESSIONS!
+const corsOptions = {
+    origin: true,
+    credentials: true
+}
+
+app.use(cors(corsOptions));
+
+//app.options('*', cors(corsOptions)) // include before other routes
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -47,10 +52,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use(cors(corsOptions));
-
-app.options('*', cors(corsOptions)) // include before other routes
 
 const index = require('./routes/index');
 const authRoutes = require('./routes/authRoutes');
