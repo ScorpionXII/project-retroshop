@@ -21,10 +21,10 @@ export class ProductCreateComponent implements OnInit {
   user: any;
   filename = '';
 
-  constructor(private session: SessionService, private router: Router, private productService: ProductService) { }
+  constructor(private sessionService: SessionService, private router: Router, private productService: ProductService) { }
 
   ngOnInit() {
-    this.session.isLoggedIn()
+    this.sessionService.isLoggedIn()
       .subscribe(
         (user) => { this.user = user },
         () => { this.router.navigate(['login']) }

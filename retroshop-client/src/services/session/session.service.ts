@@ -1,6 +1,6 @@
 import {EventEmitter, Injectable, Output} from '@angular/core';
-import {Http, RequestOptions, Headers, Response} from '@angular/http';
-import {Observable} from "rxjs/Observable";
+import { Http } from '@angular/http';
+import { Observable } from "rxjs/Observable";
 import { environment } from '../../environments/environment';
 import 'rxjs/Rx';
 

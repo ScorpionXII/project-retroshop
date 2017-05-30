@@ -16,13 +16,13 @@ export class LoginComponent implements OnInit {
 
   error: string;
 
-  constructor(private session: SessionService, private router: Router) { }
+  constructor(private sessionService: SessionService, private router: Router) { }
 
   ngOnInit() {
   }
 
   login() {
-    this.session.login(this.formInfo)
+    this.sessionService.login(this.formInfo)
       .subscribe((user) => {
           this.router.navigate(['home']);
         },

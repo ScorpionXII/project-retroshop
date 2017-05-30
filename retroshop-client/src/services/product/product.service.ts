@@ -42,6 +42,12 @@ export class ProductService {
       .catch(this.handleError);
   }
 
+  getBySeller(id) {
+    return this.http.get(`${this.serverUrl}/api/products/seller/${id}`, { withCredentials:true })
+      .map((res) => res.json())
+      .catch(this.handleError);
+  }
+
   handleError(e) {
     return Observable.throw(e.json().message);
   }

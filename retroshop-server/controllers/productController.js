@@ -121,5 +121,21 @@ module.exports = {
             }
             return res.status(204).json();
         });
+    },
+
+    /**
+     * ProductController.seller()
+     */
+    seller: function (req, res) {
+        var id = req.params.id;
+        ProductModel.find({ seller:id }, function (err, Products) {
+            if (err) {
+                return res.status(500).json({
+                    message: 'Error when getting Product.',
+                    error: err
+                });
+            }
+            return res.json(Products);
+        });
     }
 };

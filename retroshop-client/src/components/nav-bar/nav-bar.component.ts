@@ -12,24 +12,24 @@ export class NavBarComponent implements OnInit {
   user: any;
   error: string;
 
-  constructor(private session: SessionService, private router: Router) { }
+  constructor(private sessionService: SessionService, private router: Router) { }
 
   ngOnInit() {
-    this.session.getUserChangedEmitter()
+    this.sessionService.getUserChangedEmitter()
       .subscribe(user => {
         this.user = user;
-        //this.session.isLoggedIn().subscribe(user => console.log(user));
+        //this.sessionService.isLoggedIn().subscribe(user => console.log(user));
       });
   }
 
   logout() {
-    this.session.logout()
+    this.sessionService.logout()
       .subscribe(() => {
         this.router.navigate([''])
       });
   }
 
   islogged() {
-    this.session.isLoggedIn().subscribe(user => console.log(user));
+    this.sessionService.isLoggedIn().subscribe(user => console.log(user));
   }
 }

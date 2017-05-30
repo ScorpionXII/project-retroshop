@@ -28,4 +28,10 @@ router.put('/:id', authChecker, ProductController.update);
  */
 router.delete('/:id', authChecker, ProductController.remove);
 
+/*
+ * FILTER BY SELLER
+ */
+
+router.get('/seller/:id', authChecker, ProductController.seller);
+
 module.exports = router;
