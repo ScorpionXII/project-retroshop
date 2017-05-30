@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import {SessionService} from "../../services/session/session.service";
-import {ActivatedRoute, Router} from "@angular/router";
 import {FileUploader} from "ng2-file-upload";
 import {environment} from "../../environments/environment";
+import {Router} from "@angular/router";
+import {} from 'googlemaps/index';
 
 @Component({
   selector: 'app-signup-form',
@@ -20,8 +21,14 @@ export class SignupComponent implements OnInit {
     fullname: ''
   };
 
+  location = {
+    lat: 0,
+    lng: 0
+  }
+
   user: any;
   error: string;
+
   feedback: string;
   imgPlaceholder = 'https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg';
   imgFileName = '';
@@ -36,10 +43,8 @@ export class SignupComponent implements OnInit {
           this.router.navigate(['']);
         });
     };
-
     this.uploader.onErrorItem = (item, response) => {
       this.feedback = JSON.parse(response).message;
-      console.log('SIGNUP ERROR!');
     };
   }
 
@@ -56,9 +61,16 @@ export class SignupComponent implements OnInit {
       form.append('username', this.formInfo.username);
       form.append('password', this.formInfo.password);
       form.append('fullname', this.formInfo.fullname);
+      form.append('lat', this.location.lat);
+      form.append('lng', this.location.lng);
     };
 
     this.uploader.uploadAll();
+  }
+
+  setLocation(event) {
+    this.location = event;
+    console.log(this.location);
   }
 
   onChange(event){

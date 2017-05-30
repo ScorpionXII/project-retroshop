@@ -9,7 +9,7 @@ const multer  = require('multer');
 const upload = multer({ dest: './public/uploads/images' });
 
 router.post('/signup', upload.single('file'), (req, res, next) => {
-    const { username, password, fullname, location } = req.body;
+    const { username, password, fullname, lat, lng } = req.body;
 
     if (!username || !password) {
        return res.status(400).json({ message: 'Provide username and password' });
@@ -28,8 +28,8 @@ router.post('/signup', upload.single('file'), (req, res, next) => {
             password: hashPass,
             fullname: fullname,
             picture: `/uploads/images/${ req.file.filename }`,
-            pictureName: `${ req.file.originalname }`
-            // location: location
+            pictureName: `${ req.file.originalname }`,
+            location: { lat: lat, lng: lng }
         });
 
         newUser.save((err) => {

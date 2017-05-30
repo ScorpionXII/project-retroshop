@@ -1,0 +1,7 @@
+<label for="autocomplete">Location</label>
+<input class="form-control" type="search" id="autocomplete" placeholder="Pick your location" #searchPlace/>
+<div class="map-wrapper">
+  <sebm-google-map [latitude]="location.lat" [longitude]="location.lng" [scrollwheel]="false" [zoom]="zoom">
+    <sebm-google-map-marker [latitude]="location.lat" [longitude]="location.lng" [iconUrl]="iconUrl" title="You"></sebm-google-map-marker>
+  </sebm-google-map>
+</div>

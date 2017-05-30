@@ -16,6 +16,10 @@ import { HomeComponent } from '../components/home/home.component';
 import { ProductService } from "../services/product/product.service";
 import { FileSelectDirective } from "ng2-file-upload";
 import { ProductListComponent } from '../components/product-list/product-list.component';
+import { GmapTestComponent } from '../components/gmap-test/gmap-test.component';
+import { AgmCoreModule } from "angular2-google-maps/core";
+import {GooglePlaceModule} from 'ng2-google-place-autocomplete';
+import { InputSearchPlaceGmapComponent } from '../components/input-search-place-gmap/input-search-place-gmap.component';
 
 @NgModule({
   declarations: [
@@ -26,14 +30,18 @@ import { ProductListComponent } from '../components/product-list/product-list.co
     ProductCreateComponent,
     HomeComponent,
     FileSelectDirective,
-    ProductListComponent
+    ProductListComponent,
+    GmapTestComponent,
+    InputSearchPlaceGmapComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(routes),
-    MasonryModule
+    MasonryModule,
+    AgmCoreModule.forRoot({ apiKey:'AIzaSyBPeU5zWhjbP16CcsSYSyVuDndGKr6Nn98', libraries:['places']}),
+    GooglePlaceModule
   ],
   providers: [ SessionService, ProductService ],
   bootstrap: [ AppComponent ]
