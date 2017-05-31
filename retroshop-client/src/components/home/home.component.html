@@ -1,4 +1,5 @@
 <div class="row">
+  <div class="col-md-10 col-md-offset-1">
   <masonry class="masonry" [options]="{ fitWidth: true, horizontalOrder: true, initLayout: true }">
     <masonry-brick class="masonry-brick" *ngFor="let product of productsList">
         <div class="thumbnail thumbnail-custom">
@@ -17,4 +18,5 @@
         </div>
     </masonry-brick>
   </masonry>
+  </div>
 </div>

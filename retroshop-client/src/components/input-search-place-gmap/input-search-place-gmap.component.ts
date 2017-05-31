@@ -15,7 +15,10 @@ export class InputSearchPlaceGmapComponent implements OnInit {
   @Output() onPlaceChanged = new EventEmitter<any>();
 
   zoom = 15;
-  location = { lat: 40.4153838, lng: -3.703219900000022 };
+  location = {
+    lat: 40.4153838,
+    lng: -3.703219900000022
+  };
   iconUrl = 'assets/images/markerIcon2.png';
 
   constructor(private mapsApiLoader: MapsAPILoader, private ngZone: NgZone) { }

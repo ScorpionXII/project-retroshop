@@ -1,0 +1,15 @@
+.sebm-google-map-container {
+  position: absolute;
+  height: 300px;
+  width: 100%;
+  top: 51px;
+  left: 0px;
+}
+
+.panel-custom {
+  position: absolute;
+}
+
+.list-wrapper {
+  margin-top: 300px;
+}

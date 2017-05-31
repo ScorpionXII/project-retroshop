@@ -16,7 +16,7 @@ import { HomeComponent } from '../components/home/home.component';
 import { ProductService } from "../services/product/product.service";
 import { FileSelectDirective } from "ng2-file-upload";
 import { ProductListComponent } from '../components/product-list/product-list.component';
-import { GmapTestComponent } from '../components/gmap-test/gmap-test.component';
+import { UserProfileComponent } from '../components/user-profile/user-profile.component';
 import { AgmCoreModule } from "angular2-google-maps/core";
 import {GooglePlaceModule} from 'ng2-google-place-autocomplete';
 import { InputSearchPlaceGmapComponent } from '../components/input-search-place-gmap/input-search-place-gmap.component';
@@ -31,7 +31,7 @@ import { InputSearchPlaceGmapComponent } from '../components/input-search-place-
     HomeComponent,
     FileSelectDirective,
     ProductListComponent,
-    GmapTestComponent,
+    UserProfileComponent,
     InputSearchPlaceGmapComponent,
   ],
   imports: [

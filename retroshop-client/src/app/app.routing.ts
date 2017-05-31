@@ -4,14 +4,13 @@ import {SignupComponent} from "../components/signup/signup.component";
 import {ProductCreateComponent} from "../components/product-create/product-create.component";
 import {HomeComponent} from "../components/home/home.component";
 import {ProductListComponent} from "../components/product-list/product-list.component";
-import {GmapTestComponent} from "../components/gmap-test/gmap-test.component";
+import {UserProfileComponent} from "../components/user-profile/user-profile.component";
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'profile', component: UserProfileComponent },
   { path: 'product/create', component: ProductCreateComponent },
-  { path: 'test', component: ProductListComponent },
-  { path: 'gmap', component: GmapTestComponent },
   { path: '**', redirectTo: '' }
 ];
