@@ -1,3 +1,11 @@
+.tabbable-padding {
+  padding: 10px 10px 0;
+}
+
+.panel-padding {
+  padding: 10px 0px 0;
+}
+
 a.list-group-item {
   height: 82px;
 }
@@ -14,5 +22,27 @@ a.list-group-item {
 }
 
 .buttons-block {
-  padding-top: 12px;
+  padding-top: 8px;
+}
+
+.btn-rounded {
+  font-size: 18px;
+  padding: 10px 13px;
+  border-radius: 50%;
+}
+
+.btn-red {
+  color: red;
+}
+
+.btn-red:hover {
+  color: firebrick;
+}
+
+.btn-green {
+  color: green;
+}
+
+.btn-green:hover {
+  color: darkgreen;
 }

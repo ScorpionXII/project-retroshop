@@ -7,9 +7,16 @@
   margin: 0 10px 0;
 }
 
+.thumbnail-custom {
+  border-radius: 10px;
+}
+
 .product-image {
   width: 240px;
   height: 150px;
+
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .user-block {
@@ -37,8 +44,4 @@
 
 /*.thumbnail p {*/
   /*height: 90px;*/
-/*}*/
-
-/*.thumbnail-custom {*/
-  /*height: 350px;*/
 /*}*/

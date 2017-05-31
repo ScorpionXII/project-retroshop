@@ -80,6 +80,7 @@ export class SignupComponent implements OnInit {
 
     reader.onloadend = function () {
       componentScope.imgPlaceholder = reader.result;
+      componentScope.imgFileName = "Picture loaded...";
     };
 
     reader.readAsDataURL(file);

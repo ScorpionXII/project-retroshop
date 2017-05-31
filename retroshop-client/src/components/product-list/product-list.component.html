@@ -1,26 +1,62 @@
 <div class="row">
   <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
-    <div class="list-group">
-      <p href="#" class="list-group-item active">My Products<span class="pull-right">{{productsList.length}} Products</span></p>
-      <a class="list-group-item" *ngFor="let product of productsList">
-        <img class="product-image" src="https://placehold.it/60x60">
-        <div class="text-block">
-          <h4 class="list-group-item-heading">
-            {{product.title}}
-          </h4>
-          <!--<p class="list-group-item-text">-->
-            <!--Description: {{product.description}}-->
-          <!--</p>-->
-          <p class="list-group-item-text">
-            Price: {{product.price}}
-          </p>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">My Products</div>
+      <div class="tabbable tabbable-padding" id="tabs-1">
+
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a href="#panel-selling" data-toggle="tab">Selling</a>
+          </li>
+          <li>
+            <a href="#panel-sold" data-toggle="tab">Sold</a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane active panel-padding" id="panel-selling">
+            <!--<div class="panel panel-primary">-->
+            <div class="list-group">
+              <!--<p href="#" class="list-group-item active">My Products<span class="pull-right">{{productsList.length}} Products</span></p>-->
+              <p href="#" class="list-group-item">Items<span class="pull-right">{{productsList.length}} Products</span>
+              </p>
+              <a class="list-group-item" *ngFor="let product of productsList">
+                <img class="product-image" src="https://placehold.it/60x60">
+                <div class="text-block">
+                  <h4 class="list-group-item-heading">
+                    {{product.title}}
+                  </h4>
+                  <!--<p class="list-group-item-text">-->
+                  <!--Description: {{product.description}}-->
+                  <!--</p>-->
+                  <p class="list-group-item-text">
+                    Price: {{product.price}}
+                  </p>
+                </div>
+                <div class="pull-right buttons-block">
+                  <a class="btn btn-link btn-rounded" title="Mark as sold!"><span class="glyphicon glyphicon-ok-sign btn-green"></span></a>
+                  <a class="btn btn-link btn-rounded" title="Edit item"><span class="glyphicon glyphicon-edit"></span></a>
+                  <a class="btn btn-link btn-rounded" title="Delete item"><span class="glyphicon glyphicon-remove-sign btn-red"></span></a>
+                </div>
+              </a>
+              <p class="list-group-item"></p>
+            </div>
+            <!--</div>-->
+          </div>
+
+          <div class="tab-pane" id="panel-sold">
+            <p>
+              Howdy, I'm in Section 2.
+            </p>
+          </div>
+
         </div>
-        <div class="pull-right buttons-block">
-          <button class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span></button>
-          <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
-        </div>
-      </a>
-      <p class="list-group-item active"></p>
+      </div>
     </div>
+
+
+
+
   </div>
 </div>

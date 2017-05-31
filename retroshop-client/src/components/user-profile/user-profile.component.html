@@ -1,9 +1,13 @@
 <sebm-google-map [latitude]="location.lat" [longitude]="location.lng" [scrollwheel]="false" [zoom]="zoom">
   <sebm-google-map-marker [latitude]="location.lat" [longitude]="location.lng" [iconUrl]="iconUrl"></sebm-google-map-marker>
 </sebm-google-map>
-<div class="panel panel-primary panel-custom">
+<div *ngIf="user" class="panel panel-primary panel-custom">
   <div class="panel-body">
-    <p>Hola</p>
+    <img id="profile-img" class="profile-img-card" src="{{serverUrl + user.picture}}"/>
+    <div class="text-block">
+      <h4>{{user.fullname}}</h4>
+      <p>Stars: *****</p>
+    </div>
   </div>
 </div>
 <div class="list-wrapper">

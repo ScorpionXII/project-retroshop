@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SessionService} from "../../services/session/session.service";
 import {Router} from "@angular/router";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-gmap-test',
@@ -8,6 +9,10 @@ import {Router} from "@angular/router";
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
+
+  serverUrl = environment.serverUrl;
+
+  user:any;
 
   zoom = 15;
   location = {
@@ -21,7 +26,10 @@ export class UserProfileComponent implements OnInit {
   ngOnInit() {
     this.sessionService.isLoggedIn()
       .subscribe(
-        (user) => { this.location = user.location },
+        (user) => {
+          this.user = user;
+          this.location = user.location;
+        },
         () => { this.router.navigate(['login']) }
       );
   }
