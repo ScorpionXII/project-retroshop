@@ -20,6 +20,7 @@ import { UserProfileComponent } from '../components/user-profile/user-profile.co
 import { AgmCoreModule } from "angular2-google-maps/core";
 import {GooglePlaceModule} from 'ng2-google-place-autocomplete';
 import { InputSearchPlaceGmapComponent } from '../components/input-search-place-gmap/input-search-place-gmap.component';
+import { PulserComponent } from '../components/pulser/pulser.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { InputSearchPlaceGmapComponent } from '../components/input-search-place-
     ProductListComponent,
     UserProfileComponent,
     InputSearchPlaceGmapComponent,
+    PulserComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,7 @@ import {Router} from "@angular/router";
 import {environment} from "../../environments/environment";
 
 @Component({
-  selector: 'app-gmap-test',
+  selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.css']
 })

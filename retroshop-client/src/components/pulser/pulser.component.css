@@ -1,0 +1,46 @@
+.pulser {
+  margin: 0 auto;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+}
+
+@keyframes pulse {
+  0%{transform:scale(.1);opacity: 0;}
+  50%{ opacity: .4;}
+  100%{transform: scale(1.9); opacity: 0;}
+}
+.controls div {
+  background-color: #3748f0;
+  border-radius: 50%;
+  position: absolute;
+  margin: auto auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.controls div:nth-child(1){
+  animation: pulse 2s infinite;
+}
+.controls div:nth-child(2){
+  animation: pulse 2s infinite .3s;
+}
+.controls div:nth-child(3){
+  animation: pulse 2s infinite .6s;
+}
+
+.controls div:nth-child(4){
+  text-align: center;
+  /*font-family: "Baloo", cursive;*/
+  color: #FFFFFF;
+  font-size: 15px;
+  line-height: 200px;
+
+  overflow: hidden;
+}
