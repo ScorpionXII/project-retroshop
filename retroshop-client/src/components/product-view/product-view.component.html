@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel">
+        <div *ngIf="product" class="panel-body">
+          <p>{{product.title}}</p>
+          <p>{{product.description}}</p>
+          <p>{{product.price}}</p>
+          <hr>
+          <p>{{product.seller.fullname}}</p>
+        </div>
+    </div>
+  </div>
+</div>

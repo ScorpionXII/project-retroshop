@@ -1,0 +1,54 @@
+.masonry {
+  margin: auto;
+}
+
+.masonry-brick {
+  width: 250px;
+  margin: 0 10px 0;
+}
+
+.thumbnail-custom {
+  border-radius: 10px;
+}
+
+.product-block {
+  text-decoration: none;
+  color: black;
+}
+
+.product-block:hover {
+  color: #535353;
+}
+
+.product-image {
+  width: 240px;
+  height: 150px;
+
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.user-block {
+  /*margin-bottom: 15px;*/
+  margin: 0;
+  height: 50px;
+  text-decoration: none;
+  color: black;
+}
+
+.user-block:hover {
+  color: #535353;
+}
+
+.user-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 10px;
+}
+
+.user-block span {
+  display: block;
+  line-height: 25px;
+}
