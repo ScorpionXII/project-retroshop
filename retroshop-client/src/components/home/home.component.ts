@@ -9,12 +9,8 @@ import {environment} from "../../environments/environment";
 })
 export class HomeComponent implements OnInit {
 
-  productsList = [];
-
-  constructor(private productService: ProductService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.productService.getList()
-      .subscribe(products => { this.productsList = products; });
   }
 }

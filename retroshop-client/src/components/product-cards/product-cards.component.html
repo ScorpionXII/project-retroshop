@@ -10,7 +10,7 @@
             <h4>{{ product.price }} €</h4>
           </div>
         </a>
-        <a routerLink="/profile/view/{{(product.seller) ? product.seller._id : '0'}}" class="user-block">
+        <a *ngIf="!sellerId" routerLink="/profile/view/{{(product.seller) ? product.seller._id : '0'}}" class="user-block">
           <div>
             <img class="user-image" src="{{ setUserPicture(product) }}" alt="...">
             <span class="user-name">{{ (product.seller) ? product.seller.fullname : 'Username' }}</span>

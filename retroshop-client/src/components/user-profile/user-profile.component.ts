@@ -1,9 +1,8 @@
-import {Component, ElementRef, OnInit, ViewChild, ViewChildren} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {SessionService} from "../../services/session/session.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {environment} from "../../environments/environment";
 import {ModalComponent} from "../modal/modal.component";
-import {ProductService} from "../../services/product/product.service";
 
 @Component({
   selector: 'app-user-profile',

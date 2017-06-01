@@ -1,3 +1,7 @@
+.map-block {
+  height: 300px;
+}
+
 .sebm-google-map-container {
   position: absolute;
   height: 300px;
@@ -9,9 +13,9 @@
 .panel-custom {
   border-radius: 10px;
   margin-top: 22px;
-  margin-left: 30px;
+  margin-left: 15px;
   position: absolute;
-  width: 420px;
+  width: 400px;
 }
 
 .profile-img-card {
@@ -28,8 +32,4 @@
   width: 50%;
   float: right;
   /*text-align: center;*/
-}
-
-.list-wrapper {
-  margin-top: 300px;
 }

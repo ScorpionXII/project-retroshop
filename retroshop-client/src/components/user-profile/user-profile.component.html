@@ -1,17 +1,24 @@
-<sebm-google-map [latitude]="location.lat" [longitude]="location.lng" [scrollwheel]="false" [zoom]="zoom">
-  <sebm-google-map-marker [latitude]="location.lat" [longitude]="location.lng" [iconUrl]="iconUrl"></sebm-google-map-marker>
-</sebm-google-map>
-<div *ngIf="user" class="panel panel-primary panel-custom">
-  <div class="panel-body">
-    <img id="profile-img" class="profile-img-card" src="{{ setUserPicture(user) }}"/>
-    <div class="text-block">
-      <h4>{{user.fullname}}</h4>
-      <p>Stars: *****</p>
+<div class="map-block">
+  <sebm-google-map [latitude]="location.lat" [longitude]="location.lng" [scrollwheel]="false" [zoom]="zoom">
+    <sebm-google-map-marker [latitude]="location.lat" [longitude]="location.lng" [iconUrl]="iconUrl"></sebm-google-map-marker>
+  </sebm-google-map>
+  <div *ngIf="user" class="panel panel-primary panel-custom">
+    <div class="panel-body">
+      <img id="profile-img" class="profile-img-card" src="{{ setUserPicture(user) }}"/>
+      <div class="text-block">
+        <h4>{{user.fullname}}</h4>
+        <p>Stars: *****</p>
+      </div>
     </div>
   </div>
 </div>
-<div class="list-wrapper">
-  <app-product-list *ngIf="isOwner"></app-product-list>
+<div *ngIf="isOwner" class="list-wrapper">
+  <app-product-list></app-product-list>
+</div>
+<div *ngIf="!isOwner" class="row">
+  <div *ngIf="user" class="col-md-10 col-md-offset-1">
+    <app-product-cards [sellerId]="user._id"></app-product-cards>
+  </div>
 </div>
 
 
