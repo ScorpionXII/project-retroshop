@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {SessionService} from "../../services/session/session.service";
 import {Router} from "@angular/router";
 import {ProductService} from "../../services/product/product.service";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-product',

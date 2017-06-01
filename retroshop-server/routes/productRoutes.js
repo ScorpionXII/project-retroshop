@@ -32,6 +32,6 @@ router.delete('/:id', authChecker, ProductController.remove);
  * FILTER BY SELLER
  */
 
-router.get('/seller/:id', authChecker, ProductController.seller);
+router.get('/seller/:id', ProductController.seller);
 
 module.exports = router;

@@ -56,6 +56,12 @@ export class SessionService {
       .catch(this.handleError);
   }
 
+  getUser(id) {
+    return this.http.get(`${this.serverUrl}/api/users/${id}`)
+      .map(res => res.json())
+      .catch(this.handleError);
+  }
+
   getPrivateData() {
     return this.http.get(`${this.serverUrl}/private`)
       .map(res => res.json())

@@ -40,7 +40,7 @@ module.exports = {
                 });
             }
             return res.json(Product);
-        });
+        }).populate('seller');
     },
 
     /**

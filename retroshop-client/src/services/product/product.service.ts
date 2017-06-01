@@ -30,8 +30,8 @@ export class ProductService {
       .catch(this.handleError);
   }
 
-  edit(phone) {
-    return this.http.put(`${this.serverUrl}/api/products/${phone.id}`, phone)
+  edit(product) {
+    return this.http.put(`${this.serverUrl}/api/products/${product._id}`, product, { withCredentials: true })
       .map((res) => res.json())
       .catch(this.handleError);
   }
@@ -43,7 +43,7 @@ export class ProductService {
   }
 
   getBySeller(id) {
-    return this.http.get(`${this.serverUrl}/api/products/seller/${id}`, { withCredentials:true })
+    return this.http.get(`${this.serverUrl}/api/products/seller/${id}`)
       .map((res) => res.json())
       .catch(this.handleError);
   }

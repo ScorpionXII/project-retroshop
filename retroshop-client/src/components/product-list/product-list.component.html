@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
 
+    <!-- BEGIN TABS FOR LOGGED PROFILE -->
     <div class="panel panel-primary">
       <div class="panel-heading">My Products</div>
       <div class="tabbable tabbable-padding" id="tabs-1">
@@ -15,48 +16,48 @@
         </ul>
 
         <div class="tab-content">
-          <div class="tab-pane active panel-padding" id="panel-selling">
-            <!--<div class="panel panel-primary">-->
-            <div class="list-group">
-              <!--<p href="#" class="list-group-item active">My Products<span class="pull-right">{{productsList.length}} Products</span></p>-->
+          <div class="tab-pane active tab-pane-padding" id="panel-selling">
+            <app-pulser *ngIf="productsList.length == 0" [text]="'No items!'"></app-pulser>
+            <div *ngIf="productsList.length > 0" class="list-group">
               <p href="#" class="list-group-item">Items<span class="pull-right">{{productsList.length}} Products</span>
               </p>
-              <a class="list-group-item" *ngFor="let product of productsList">
-                <img class="product-image" src="https://placehold.it/60x60">
+              <a class="list-group-item" *ngFor="let product of productsList; let count = index">
+                <img *ngIf="product.category == 'console'" class="product-image" src="/assets/images/console.png">
+                <img *ngIf="product.category == 'accessory'" class="product-image" src="/assets/images/accessory.png">
+                <img *ngIf="product.category == 'game'" class="product-image" src="/assets/images/game.png">
                 <div class="text-block">
-                  <h4 class="list-group-item-heading">
-                    {{product.title}}
-                  </h4>
+                  <h4 class="list-group-item-heading"><b>{{product.title}}</b></h4>
                   <!--<p class="list-group-item-text">-->
                   <!--Description: {{product.description}}-->
                   <!--</p>-->
                   <p class="list-group-item-text">
-                    Price: {{product.price}}
+                    Price: {{product.price}} €
                   </p>
                 </div>
                 <div class="pull-right buttons-block">
                   <a class="btn btn-link btn-rounded" title="Mark as sold!"><span class="glyphicon glyphicon-ok-sign btn-green"></span></a>
-                  <a class="btn btn-link btn-rounded" title="Edit item"><span class="glyphicon glyphicon-edit"></span></a>
+                  <a class="btn btn-link btn-rounded" title="Edit item" (click)="showEditForm(count)"><span class="glyphicon glyphicon-edit"></span></a>
                   <a class="btn btn-link btn-rounded" title="Delete item"><span class="glyphicon glyphicon-remove-sign btn-red"></span></a>
                 </div>
               </a>
               <p class="list-group-item"></p>
             </div>
-            <!--</div>-->
           </div>
 
-          <div class="tab-pane" id="panel-sold">
-            <p>
+          <div class="tab-pane tab-pane-padding" id="panel-sold">
               <app-pulser [text]="'No sold items!'"></app-pulser>
-            </p>
           </div>
-
         </div>
+
       </div>
     </div>
-
-
-
+    <!-- END TABS FOR LOGGED PROFILE -->
 
   </div>
 </div>
+
+<app-modal [modalTitle]="'Update Product'" [closeButton]="false" #modalElement>
+  <app-product-edit [product]="currentProduct"></app-product-edit>
+</app-modal>
+
+<ng-content></ng-content>
