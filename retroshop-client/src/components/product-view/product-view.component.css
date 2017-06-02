@@ -1,0 +1,20 @@
+.map-block {
+  height: 300px;
+}
+
+.sebm-google-map-container {
+  height: 300px;
+}
+
+.price {
+  font-size: 25px;
+}
+
+.stars {
+  color: #ffd809;
+}
+
+.image {
+  max-width: 640px;
+  max-height: 480px;
+}

@@ -3,7 +3,7 @@
     <masonry-brick class="masonry-brick" *ngFor="let product of productsList | filterBy:'title' :filterPattern">
       <div class="thumbnail thumbnail-custom">
         <a routerLink="/product/view/{{product._id}}" class="product-block">
-          <img class="product-image" src="https://placehold.it/240x150" alt="...">
+          <img class="product-image" src="{{(product.images[0]) ? product.images[0] : 'https://placehold.it/240x150'}}" alt="...">
           <div class="caption">
             <h4><b>{{ product.title }}</b></h4>
             <p>{{ product.description }}</p>
