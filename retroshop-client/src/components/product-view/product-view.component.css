@@ -18,3 +18,15 @@
   max-width: 640px;
   max-height: 480px;
 }
+
+.user-block img {
+  float: left;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.text-block {
+  padding-top: 10px;
+}

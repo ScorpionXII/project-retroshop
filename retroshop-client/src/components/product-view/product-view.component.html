@@ -27,14 +27,19 @@
             </sebm-google-map>
           </div>
           <hr>
-          <p>{{product.seller.fullname}}</p>
-          <p class="stars">
-            <i class="glyphicon glyphicon-star"></i>
-            <i class="glyphicon glyphicon-star"></i>
-            <i class="glyphicon glyphicon-star"></i>
-            <i class="glyphicon glyphicon-star"></i>
-            <i class="glyphicon glyphicon-star"></i>
-          </p>
+          <div class="user-block">
+            <a routerLink="/profile/view/{{(product.seller) ? product.seller._id : '0'}}"><img src="{{serverUrl + product.seller.picture}}"></a>
+            <div class="text-block">
+              <p>{{product.seller.fullname}}</p>
+              <p class="stars">
+                <i class="glyphicon glyphicon-star"></i>
+                <i class="glyphicon glyphicon-star"></i>
+                <i class="glyphicon glyphicon-star"></i>
+                <i class="glyphicon glyphicon-star"></i>
+                <i class="glyphicon glyphicon-star"></i>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
