@@ -23,8 +23,10 @@ import { PulserComponent } from '../components/pulser/pulser.component';
 import { ProductViewComponent } from '../components/product-view/product-view.component';
 import { ModalComponent } from '../components/modal/modal.component';
 import { ProductEditComponent } from '../components/product-edit/product-edit.component';
-import {ProductService} from "../services/product/product.service";
+import { ProductService } from "../services/product/product.service";
 import { ProductCardsComponent } from '../components/product-cards/product-cards.component';
+import { FilterByPipe } from '../pipes/filter-by-name.pipe';
+import {NavBarSearchService} from "../services/nav-bar-search/nav-bar-search.service";
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import { ProductCardsComponent } from '../components/product-cards/product-cards
     ModalComponent,
     ProductEditComponent,
     ProductCardsComponent,
+    FilterByPipe,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,7 @@ import { ProductCardsComponent } from '../components/product-cards/product-cards
     AgmCoreModule.forRoot({ apiKey:'AIzaSyBPeU5zWhjbP16CcsSYSyVuDndGKr6Nn98', libraries:['places']}),
     GooglePlaceModule
   ],
-  providers: [ SessionService, ProductService ],
+  providers: [ SessionService, ProductService, NavBarSearchService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

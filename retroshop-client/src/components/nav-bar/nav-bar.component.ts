@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SessionService} from "../../services/session/session.service";
 import {Router} from "@angular/router";
+import {NavBarSearchService} from "../../services/nav-bar-search/nav-bar-search.service";
 
 @Component({
   selector: 'app-nav-bar',
@@ -12,7 +13,11 @@ export class NavBarComponent implements OnInit {
   user: any;
   error: string;
 
-  constructor(private sessionService: SessionService, private router: Router) { }
+  constructor(
+    private sessionService: SessionService,
+    private searchService: NavBarSearchService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.sessionService.getUserChangedEmitter()
@@ -27,6 +32,11 @@ export class NavBarComponent implements OnInit {
       .subscribe(() => {
         this.router.navigate([''])
       });
+  }
+
+  updatePattern(event) {
+    console.log(event.target.value);
+    this.searchService.setPattern(event.target.value);
   }
 
   islogged() {

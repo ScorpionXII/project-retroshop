@@ -1,6 +1,6 @@
 <div>
   <masonry class="masonry" [options]="{ fitWidth: true, horizontalOrder: true, initLayout: true }">
-    <masonry-brick class="masonry-brick" *ngFor="let product of productsList">
+    <masonry-brick class="masonry-brick" *ngFor="let product of productsList | filterBy:'title' :filterPattern">
       <div class="thumbnail thumbnail-custom">
         <a routerLink="/product/view/{{product._id}}" class="product-block">
           <img class="product-image" src="https://placehold.it/240x150" alt="...">
@@ -14,7 +14,13 @@
           <div>
             <img class="user-image" src="{{ setUserPicture(product) }}" alt="...">
             <span class="user-name">{{ (product.seller) ? product.seller.fullname : 'Username' }}</span>
-            <span class="user-starts">*****</span>
+            <span class="user-starts">
+              <i class="glyphicon glyphicon-star"></i>
+              <i class="glyphicon glyphicon-star"></i>
+              <i class="glyphicon glyphicon-star"></i>
+              <i class="glyphicon glyphicon-star"></i>
+              <i class="glyphicon glyphicon-star"></i>
+            </span>
           </div>
         </a>
       </div>

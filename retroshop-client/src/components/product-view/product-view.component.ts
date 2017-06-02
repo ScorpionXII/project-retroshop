@@ -20,16 +20,23 @@ export class ProductViewComponent implements OnInit {
   product: any;
 
   ngOnInit() {
-    this.sessionService.isLoggedIn()
-      .subscribe(
-        () => {
-          this.route.params
-            .subscribe(params => {
-              this.productService.get(params['id']).subscribe(product => {this.product = product});
-            });
-        },
-        () => { this.router.navigate(['login']) }
-      );
+    this.route.params
+      .subscribe(params => {
+        this.productService.get(params['id']).subscribe(product => {
+          this.product = product
+        });
+      });
+
+    // this.sessionService.isLoggedIn()
+    //   .subscribe(
+    //     () => {
+    //       this.route.params
+    //         .subscribe(params => {
+    //           this.productService.get(params['id']).subscribe(product => {this.product = product});
+    //         });
+    //     },
+    //     () => { this.router.navigate(['login']) }
+    //   );
   }
 
 }

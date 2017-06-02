@@ -1,4 +1,4 @@
-import {Component, ContentChild, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {SessionService} from "../../services/session/session.service";
 import {ProductService} from "../../services/product/product.service";
 import {Router} from "@angular/router";

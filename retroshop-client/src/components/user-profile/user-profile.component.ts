@@ -11,9 +11,6 @@ import {ModalComponent} from "../modal/modal.component";
 })
 export class UserProfileComponent implements OnInit {
 
-  @ViewChild('modalElement')
-  modalElement: ModalComponent;
-
   serverUrl = environment.serverUrl;
 
   user: any;
@@ -42,17 +39,15 @@ export class UserProfileComponent implements OnInit {
               this.user = user;
               this.location = user.location;
             }
-            else {
-              this.sessionService.getUser(params['id'])
-                .subscribe(user => {
-                  this.isOwner = false;
-                  this.user = user;
-                  this.location = user.location;
-                });
-            }
-
           },
-          () => { this.router.navigate(['login']); }
+          () => {
+            this.sessionService.getUser(params['id'])
+              .subscribe(user => {
+                this.isOwner = false;
+                this.user = user;
+                this.location = user.location;
+              });
+          }
         );
     });
   }
