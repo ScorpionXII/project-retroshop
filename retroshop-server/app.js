@@ -14,6 +14,8 @@ mongoose.connect('mongodb://localhost/retroshop-db');
 
 const app = express();
 
+require('dotenv').load();
+
 // passport.js configuration
 require('./config/passportConfig')(passport);
 
