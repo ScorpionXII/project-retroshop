@@ -10,11 +10,13 @@ const session      = require('express-session');
 const MongoStore   = require('connect-mongo')(session);
 const cors         = require('cors');
 
-mongoose.connect('mongodb://localhost/retroshop-db');
+require('dotenv').load();
+
+mongoose.connect(process.env.dbUrl);
 
 const app = express();
 
-require('dotenv').load();
+
 
 // passport.js configuration
 require('./config/passportConfig')(passport);
