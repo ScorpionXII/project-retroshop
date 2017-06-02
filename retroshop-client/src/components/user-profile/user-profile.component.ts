@@ -38,6 +38,13 @@ export class UserProfileComponent implements OnInit {
               this.isOwner = true;
               this.user = user;
               this.location = user.location;
+            } else {
+              this.sessionService.getUser(params['id'])
+                .subscribe(user => {
+                  this.isOwner = false;
+                  this.user = user;
+                  this.location = user.location;
+                });
             }
           },
           () => {
