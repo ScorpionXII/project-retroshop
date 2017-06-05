@@ -3,7 +3,7 @@ RetroShop
 
 Getting Started
 ---------------
-Retroshop born as idea to implements the final project for the IronHack Bootcamp April-June 2017. Its a website specilized 
+Retroshop born as idea to implements the final project for the IronHack Bootcamp April-June 2017. It's a website specialized 
 in the retro video game consoles, accessories etc...
 
 Why?
