@@ -12,8 +12,7 @@ Mainly because this market around the retro consoles it's growing recently, and 
 
 I don't need this, I have Ebay, Amazon, etc...
 ----------------
-Tal vez, pero es diferente cuando usted tiene un mercado especializado para las cosas que comerciar. Retroshop se centrará en la calidad de los productos
-y una política muy estricta para la atención al cliente y la devolución!
+Maybe, but it's different when you have access to an specialized marketplace. Retroshop is mainly focus in the quality of the products and a reliable policy for customer support!
 
 DEMO TIME
 ---------
