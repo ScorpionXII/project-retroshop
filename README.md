@@ -16,7 +16,7 @@ Maybe, but it's different when you have access to an specialized marketplace. Re
 
 DEMO TIME
 ---------
-You can play with a fully functional testing DEMO at http://ih-retroshop.herokuapp.com/ ( MAINTENACE will be back March/2018 )
+You can play with a fully functional testing DEMO at http://ih-retroshop.herokuapp.com/ ( MAINTENACE, will be back soon! due to free Heroku hosting :P )
 
 What do you have backstage?
 --------------------
